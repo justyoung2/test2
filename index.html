@@ -26,6 +26,11 @@
             let sound3 = new Audio('gun.mp3');
             let timer;
 
+            if (score == 500) {
+                img.scr = 'fast.png';
+            
+            }
+
             // 20초 동안 클릭 안 하면 적용
             function resetTimer() {
                 if (timer) {
