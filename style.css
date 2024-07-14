@@ -45,7 +45,7 @@ body {
     font-size: 100px;
     -webkit-text-stroke: 3px #000;
     color: #fff;
-    font-family: 'Poppins', sans-serif; /* 숫자에 대한 폰트 설정 */
+    font-family: 'Montserrat', sans-serif; /* 숫자에 대한 폰트 설정 */
 }
 
 /* Ensuring responsive font sizes */
