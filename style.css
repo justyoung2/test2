@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+/* Importing fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
 /* Styling for body */
 body {
     font-family: 'Open Sans', Arial, sans-serif;
@@ -39,10 +43,9 @@ body {
 /* p styling (숫자에 대한 폰트 패밀리 설정 추가) */
 .container p {
     font-size: 100px;
-    font-weight: bold;
     -webkit-text-stroke: 3px #000;
     color: #fff;
-    font-family: 'Arial', Arial, sans-serif;
+    font-family: 'Roboto Mono', monospace; /* 숫자에 대한 폰트 설정 */
 }
 
 /* Ensuring responsive font sizes */
