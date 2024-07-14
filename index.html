@@ -47,21 +47,12 @@
                 event.preventDefault(); // 기본 터치 동작 방지
                 console.log("touchstart event triggered");
                 handleInteraction();
-                if (score == 500) {
-                    img.scr = 'fast.png';
-                }
-    
             }
 
             function handleTouchEnd(event) {
                 event.preventDefault(); // 기본 터치 동작 방지
                 console.log("touchend event triggered");
                 img.src = 'popcat1.png';
-                if (score == 500) {
-                    img.scr = 'fast.png';
-                }
-
-                
             }
 
             // 마우스 이벤트 처리 (옵션으로 남겨둠)
@@ -71,9 +62,6 @@
             function handleMouseDown() {
                 console.log("mousedown event triggered");
                 handleInteraction();
-                if (score == 500) {
-                    img.scr = 'fast.png';
-                }
             }
 
             function handleMouseUp() {
@@ -96,9 +84,6 @@
                 if (!sound3.paused) {
                     sound3.pause();
                     sound3.currentTime = 0;
-                }
-                if (score == 500) {
-                    img.scr = 'fast.png';
                 }
                 img.src = 'popcat2.png';
                 if (document.querySelector('#gameTitle').textContent == 'guncat') {
