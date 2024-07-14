@@ -90,16 +90,17 @@
                 }
                 addToCounter();
                 resetTimer(); // 타이머 재설정
+
+                // score가 500일 때 이미지 변경
+                if (score == 500) {
+                    img.src = 'fast.png';
+                }
             }
 
             function addToCounter() {
                 score++;
                 console.log("Score updated:", score);
                 counter.innerHTML = score;
-            }
-
-            if (score == 500) {
-                img.src = 'fast.png';
             }
 
             // h1 요소 클릭 시 텍스트 변경
