@@ -1,0 +1,50 @@
+/* Resetting default box-sizing and margin/padding for all elements */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for body */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: black;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Container styling */
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+/* h1 styling */
+.container h1 {
+    text-transform: uppercase;
+    font-size: 100px;
+    font-weight: bold;
+    margin: 10px 0;
+    -webkit-text-stroke: 3px #000;
+    color: #fff;
+}
+
+/* p styling */
+.container p {
+    font-size: 100px;
+    -webkit-text-stroke: 3px #000;
+    color: #fff;
+}
+
+/* Ensuring responsive font sizes */
+@media (max-width: 600px) {
+    .container h1, .container p {
+        font-size: 50px;
+    }
+}

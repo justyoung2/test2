@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POPCAT Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="gameTitle">popcat</h1>
+        <p id="target">0</p>
+        <img src="./popcat1.png" id="popcat1">
+    </div>
+
+    <!-- Javascript Section -->
+    <script>
+        window.onload = () =>{
+            let img = document.querySelector('#popcat1');
+            let counter = document.querySelector('#target');
+            let score = 0;
+            let sound1 = new Audio('pop.mp3');
+            let sound2 = new Audio('sleep.mp3');
+            let sound3 = new Audio('gun.mp3');
+            let timer;
+            
+            //20초동안 클릭 안하면 적용.
+            function resetTimer() {
+                if (timer) {
+                    clearTimeout(timer);
+                }
+                timer = setTimeout(() => {
+                    if (score >= 400) {
+                        sound2.play();
+                        img.src = 'popcat3.png';
+                    }
+                }, 20000); // 20초 (지금은 초)
+            }
+
+            img.addEventListener('mousedown', ()=> {
+                if (!sound2.paused) { // sound2가 재생 중이라면
+                    sound2.pause(); // 재생 중지
+                    sound2.currentTime = 0; // 재생 위치 초기화
+                }
+                if (!sound1.paused) { // sound2가 재생 중이라면
+                    sound1.pause(); // 재생 중지
+                    sound1.currentTime = 0; // 재생 위치 초기화
+                }
+                if (!sound3.paused) { // sound2가 재생 중이라면
+                    sound3.pause(); // 재생 중지
+                    sound3.currentTime = 0; // 재생 위치 초기화
+                }
+                img.src = 'popcat2.png';
+                if (document.querySelector('#gameTitle').textContent == 'guncat') {
+                    sound3.play(); // guncat일 때는 sound3 재생
+                } else {
+                    sound1.play(); // 그 외에는 sound1 재생
+                }
+                addToCounter();
+                resetTimer(); // 타이머 재설정
+            });
+
+            img.addEventListener('mouseup', ()=> {
+                img.src = 'popcat1.png';
+                if (score == 500) {
+                    img.src = 'fast.png';
+                }
+
+            });
+
+            function addToCounter(){
+                score++;
+                counter.innerHTML = score;
+                
+                // 클릭 수가 500이 되면 fast.png로 변경
+                if (score == 500) {
+                    img.src = 'fast.png';
+                }
+            }
+
+            // h1 요소 클릭 시 텍스트 변경
+            let gameTitle = document.querySelector('#gameTitle');
+            gameTitle.addEventListener('click', () => {
+                gameTitle.textContent = 'guncat';
+
+            });
+
+            // 처음 로드 시 타이머 설정
+            resetTimer();
+        }
+    </script>
+</body>
+</html>
