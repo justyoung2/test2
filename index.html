@@ -47,6 +47,10 @@
                 event.preventDefault(); // 기본 터치 동작 방지
                 console.log("touchstart event triggered");
                 handleInteraction();
+                if (score == 500) {
+                    img.scr = 'fast.png';
+                }
+    
             }
 
             function handleTouchEnd(event) {
@@ -92,6 +96,9 @@
                 if (!sound3.paused) {
                     sound3.pause();
                     sound3.currentTime = 0;
+                }
+                if (score == 500) {
+                    img.scr = 'fast.png';
                 }
                 img.src = 'popcat2.png';
                 if (document.querySelector('#gameTitle').textContent == 'guncat') {
