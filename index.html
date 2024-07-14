@@ -96,11 +96,10 @@
                 score++;
                 console.log("Score updated:", score);
                 counter.innerHTML = score;
+            }
 
-                // 클릭 수가 500이 되면 fast.png로 변경
-                if (score == 500) {
-                    img.src = 'fast.png';
-                }
+            if (score == 500) {
+                img.src = 'fast.png';
             }
 
             // h1 요소 클릭 시 텍스트 변경
