@@ -43,7 +43,6 @@ body {
 /* p styling (숫자에 대한 폰트 패밀리 설정 추가) */
 .container p {
     font-size: 100px;
-    -webkit-text-stroke: 3px #000;
     color: #fff;
     font-family: 'Montserrat', sans-serif; /* 숫자에 대한 폰트 설정 */
 }
