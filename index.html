@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>POPCAT Game</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
 </head>
 <body>
     <div class="container">
@@ -16,7 +17,7 @@
 
     <!-- Javascript Section -->
     <script>
-        window.onload = () =>{
+        window.onload = () => {
             let img = document.querySelector('#popcat1');
             let counter = document.querySelector('#target');
             let score = 0;
@@ -25,7 +26,7 @@
             let sound3 = new Audio('gun.mp3');
             let timer;
             
-            //20초동안 클릭 안하면 적용.
+            //20초 동안 클릭 안 하면 적용
             function resetTimer() {
                 if (timer) {
                     clearTimeout(timer);
@@ -35,21 +36,21 @@
                         sound2.play();
                         img.src = 'popcat3.png';
                     }
-                }, 20000); // 20초 (지금은 초)
+                }, 20000); // 20초
             }
 
-            img.addEventListener('mousedown', ()=> {
-                if (!sound2.paused) { // sound2가 재생 중이라면
-                    sound2.pause(); // 재생 중지
-                    sound2.currentTime = 0; // 재생 위치 초기화
+            img.addEventListener('mousedown', () => {
+                if (!sound2.paused) {
+                    sound2.pause();
+                    sound2.currentTime = 0;
                 }
-                if (!sound1.paused) { // sound2가 재생 중이라면
-                    sound1.pause(); // 재생 중지
-                    sound1.currentTime = 0; // 재생 위치 초기화
+                if (!sound1.paused) {
+                    sound1.pause();
+                    sound1.currentTime = 0;
                 }
-                if (!sound3.paused) { // sound2가 재생 중이라면
-                    sound3.pause(); // 재생 중지
-                    sound3.currentTime = 0; // 재생 위치 초기화
+                if (!sound3.paused) {
+                    sound3.pause();
+                    sound3.currentTime = 0;
                 }
                 img.src = 'popcat2.png';
                 if (document.querySelector('#gameTitle').textContent == 'guncat') {
@@ -61,15 +62,14 @@
                 resetTimer(); // 타이머 재설정
             });
 
-            img.addEventListener('mouseup', ()=> {
+            img.addEventListener('mouseup', () => {
                 img.src = 'popcat1.png';
                 if (score == 500) {
                     img.src = 'fast.png';
                 }
-
             });
 
-            function addToCounter(){
+            function addToCounter() {
                 score++;
                 counter.innerHTML = score;
                 
@@ -83,7 +83,6 @@
             let gameTitle = document.querySelector('#gameTitle');
             gameTitle.addEventListener('click', () => {
                 gameTitle.textContent = 'guncat';
-
             });
 
             // 처음 로드 시 타이머 설정
