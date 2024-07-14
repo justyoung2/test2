@@ -44,7 +44,7 @@ body {
 .container p {
     font-size: 100px;
     color: #fff;
-    font-family: 'Montserrat', sans-serif; /* 숫자에 대한 폰트 설정 */
+    font-family: 'Noto Sans', sans-serif; /* 숫자에 대한 폰트 설정 */
 }
 
 /* Ensuring responsive font sizes */
